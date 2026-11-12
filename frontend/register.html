@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khuôn mặt</title>
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+</head>
+<body>
+    <header>
+        <h1>
+            FACE ATTENDANCE SYSTEM
+        </h1>
+        <nav>
+            <a href="/">
+                Điểm danh
+            </a>
+            <a href="/register">
+                Đăng ký
+            </a>
+            <a href="/history">
+                Lịch sử
+            </a>
+        </nav>
+    </header>
+    <main class="register-layout">
+        <!-- PHẦN BÊN TRÁI: FORM ĐĂNG KÝ -->
+        <section class="form-section">
+            <h2>
+                Đăng ký khuôn mặt
+            </h2>
+            <form id="registerForm">
+                <label for="name">
+                    Họ tên
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+                <label for="image">
+                    Ảnh khuôn mặt
+                </label>
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                    required
+                >
+                <button type="submit">
+                    Đăng ký
+                </button>
+            </form>
+            <div id="message"></div>
+        </section>
+        <!-- PHẦN BÊN PHẢI: DANH SÁCH NGƯỜI DÙNG -->
+        <section class="list-section">
+            <h2>
+                Danh sách người dùng đã đăng ký
+            </h2>
+            <ul id="userList">
+                <li>
+                    Đang tải danh sách...
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="/static/js/register.js"></script>
+</body>
+</html>

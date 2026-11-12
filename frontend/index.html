@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Face Attendance</title>
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>FACE ATTENDANCE SYSTEM</h1>
+        <nav>
+            <a href="/">Điểm danh</a>
+            <a href="/register">Đăng ký</a>
+            <a href="/history">Lịch sử</a>
+        </nav>
+    </header>
+    <main class="attendance-layout">
+        <!-- CAMERA AREA -->
+        <section class="camera-section">
+            <div id="cameraGrid"
+                 class="camera-grid">
+                <!-- CAMERA 1 -->
+                <div class="camera-card"
+                     id="cameraCard1">
+                    <div class="camera-header">
+                        <span>IP Webcam</span>
+                        <span id="status1"
+                              class="camera-status">
+                            Tắt
+                        </span>
+                    </div>
+                    <div class="camera-container">
+                        <img id="video1"
+                             crossorigin="anonymous">
+                        <canvas id="canvas1"
+                                style="display:none">
+                        </canvas>
+                        <canvas id="overlay1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RIGHT CONTROL PANEL -->
+        <aside class="control-panel">
+            <h2>Điều khiển camera</h2>
+            <div class="camera-control">
+                <span>IP Webcam</span>
+                <button id="toggleCamera1">
+                    Bật
+                </button>
+            </div>
+            <hr>
+        </aside>
+        <!-- RECOGNITION DASHBOARD -->
+        <section class="dashboard">
+            <h2>Kết quả nhận diện</h2>
+            <div id="results">
+                <p>Chưa có dữ liệu.</p>
+            </div>
+        </section>
+    </main>
+    <script src="/static/js/attendance.js"></script>
+</body>
+</html>

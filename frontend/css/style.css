@@ -1,0 +1,323 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+/* =====================================================
+   HEADER
+===================================================== */
+header {
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+header h1 {
+    margin: 0 0 15px 0;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+/* =====================================================
+   ATTENDANCE LAYOUT
+   Chỉ áp dụng cho trang điểm danh
+===================================================== */
+main.attendance-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-areas:
+        "camera controls"
+        "dashboard dashboard";
+    gap: 20px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 100%;
+    align-items: start;
+}
+/* =====================================================
+   CAMERA SECTION
+===================================================== */
+.attendance-layout .camera-section {
+    grid-area: camera;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 0;
+    max-width: none;
+    overflow: hidden;
+    flex: none;
+}
+/* =====================================================
+   CAMERA GRID
+===================================================== */
+.attendance-layout .camera-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+/* =====================================================
+   CAMERA CARD
+===================================================== */
+.attendance-layout .camera-card {
+    display: none;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #111827;
+}
+/* CAMERA ĐANG BẬT */
+.attendance-layout .camera-card.active {
+    display: block;
+}
+/* =====================================================
+   CAMERA HEADER
+===================================================== */
+.attendance-layout .camera-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #1f2937;
+    color: white;
+    font-size: 14px;
+}
+/* CAMERA STATUS */
+.attendance-layout .camera-status {
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: #6b7280;
+    font-size: 12px;
+}
+/* =====================================================
+   CAMERA CONTAINER
+===================================================== */
+.attendance-layout .camera-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+    margin: 0;
+}
+/* IMAGE + VIDEO */
+.attendance-layout .camera-container img,
+.attendance-layout .camera-container video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: fill;
+    background: #111;
+}
+.attendance-layout .camera-container img {
+    transform: scaleX(-1);
+}
+/* CANVAS OVERLAY */
+.attendance-layout .camera-container canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+/* =====================================================
+   CONTROL PANEL
+===================================================== */
+.attendance-layout .control-panel {
+    grid-area: controls;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 0;
+    width: auto;
+    flex: none;
+}
+.attendance-layout .control-panel h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+/* CAMERA CONTROL */
+.attendance-layout .camera-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.attendance-layout .camera-control span {
+    font-size: 14px;
+    line-height: 1.4;
+}
+/* CONTROL BUTTON */
+.attendance-layout .camera-control button {
+    min-width: 65px;
+    padding: 8px 12px;
+    margin-top: 0;
+    border: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+/* BUTTON ACTIVE */
+.attendance-layout .camera-control button.active {
+    background: #dc2626;
+}
+/* =====================================================
+   ZOOM
+===================================================== */
+.attendance-layout .zoom-controls {
+    display: flex;
+    gap: 8px;
+}
+.attendance-layout .zoom-controls button {
+    flex: 1;
+    padding: 8px;
+    margin-top: 10px;
+}
+/* STOP ALL */
+.attendance-layout .stop-all {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #dc2626;
+    color: white;
+    cursor: pointer;
+}
+/* =====================================================
+   DASHBOARD
+===================================================== */
+.attendance-layout .dashboard {
+    grid-area: dashboard;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 0;
+    width: auto;
+    flex: none;
+}
+.attendance-layout .dashboard h2 {
+    margin-top: 0;
+}
+/* =====================================================
+   RECOGNITION RESULT
+===================================================== */
+.person {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.person.matched {
+    background: #e0ffe0;
+}
+.person.unknown {
+    background: #fff0dd;
+}
+/* =====================================================
+   OTHER INTERFACES
+   Giữ nguyên cho đăng ký và lịch sử
+===================================================== */
+.form-section {
+    background: white;
+    padding: 30px;
+    width: 500px;
+    border-radius: 10px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+}
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+    main.attendance-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "controls"
+            "camera"
+            "dashboard";
+        padding: 15px;
+    }
+    .attendance-layout .control-panel {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .attendance-layout .camera-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .attendance-layout .camera-grid[data-count="3"]
+    .camera-card:nth-child(3) {
+        grid-column: span 1;
+    }
+}
+/* Layout trang đăng ký */
+.register-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Khung đăng ký bên trái */
+.register-layout .form-section {
+    flex: 0 0 28%;
+    box-sizing: border-box;
+}
+/* Danh sách bên phải */
+.register-layout .list-section {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+/* Danh sách người dùng */
+.register-layout #userList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* Responsive trên điện thoại */
+@media (max-width: 768px) {
+    .register-layout {
+        flex-direction: column;
+    }
+    .register-layout .form-section,
+    .register-layout .list-section {
+        width: 100%;
+        flex: none;
+    }
+}
+.camera-card.computer-camera video {
+    transform: scaleX(-1);
+}

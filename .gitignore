@@ -1,0 +1,21 @@
+models/
+runtime/
+# Python
+__pycache__/
+*.pyc
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
