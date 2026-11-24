@@ -36,7 +36,23 @@ Mở Terminal tại **thư mục gốc của dự án**, sau đó thực hiện 
 python firstRun/setup_venv.py
 ```
 
-### Bước 2: Kích hoạt môi trường ảo
+### Bước 2: Tạo file cấu hình `.env`
+
+Nếu chưa có file `.env`, sao chép `.env.example` thành `.env`, sau đó điền thông tin MySQL và Cloudinary. Nếu đã có `.env`, giữ nguyên file hiện tại:
+
+**Windows PowerShell:**
+
+```powershell
+Copy-Item .env.example .env
+```
+
+**Linux:**
+
+```bash
+cp .env.example .env
+```
+
+### Bước 3: Kích hoạt môi trường ảo
 
 **Windows:**
 
@@ -50,7 +66,7 @@ python firstRun/setup_venv.py
 source .venv/bin/activate
 ```
 
-### Bước 3: Cài đặt thư viện và tải model
+### Bước 4: Cài đặt thư viện và tải model
 
 Chạy script tự động để cài đặt các thư viện cần thiết và tải model AntelopeV2:
 

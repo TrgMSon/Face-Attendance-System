@@ -1,5 +1,7 @@
 import os
 import warnings
+from dotenv import load_dotenv
+
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # =========================================================
@@ -10,7 +12,12 @@ BASE_DIR = os.path.dirname(
 )
 MODEL_DIR = os.path.join(BASE_DIR)
 
-# Lấy thông tin cấu hình từ biến môi trường
+load_dotenv(
+    dotenv_path=os.path.join(BASE_DIR, ".env"),
+    encoding="utf-8",
+)
+
+# Lấy thông tin cấu hình từ file .env hoặc biến môi trường
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),

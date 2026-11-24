@@ -47,6 +47,7 @@ def check_environment():
     packages_to_check = [
         ("fastapi", "fastapi"),
         ("uvicorn", "uvicorn"),
+        ("python-dotenv", "dotenv"),
         ("python-multipart", "multipart"),
         ("numpy", "numpy"),
         ("opencv-python", "cv2"),

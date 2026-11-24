@@ -50,6 +50,7 @@ ANTELOPE_URL = (
 CORE_REQUIREMENTS = [
     "fastapi",
     "uvicorn[standard]",
+    "python-dotenv",
     "python-multipart",
     "numpy",
     "opencv-python",
@@ -64,6 +65,7 @@ CORE_REQUIREMENTS = [
 REQUIRED_MODULES = [
     "fastapi",
     "uvicorn",
+    "dotenv",
     "multipart",
     "numpy",
     "cv2",
